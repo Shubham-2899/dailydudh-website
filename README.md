@@ -17,11 +17,33 @@ npm start          # serve out/ locally to check the real build
 
 | What | Where |
 |---|---|
-| Email, WhatsApp number, app link, privacy date | `src/config/site.ts` |
+| Email, WhatsApp number, app link, dates (privacy, sitemap) | `src/config/site.ts` |
 | All text, per language | `src/content/en.ts`, `hi.ts`, `mr.ts` (same shape; TypeScript flags a missing field) |
 | Page layout / sections | `src/components/home.tsx` |
 | Phone + bill illustration | `src/components/mocks.tsx` (drawn in code, no real data) |
 | Colours, fonts | `src/app/globals.css` |
+
+## SEO
+
+Already built in, nothing to do per page:
+- Title and description per language (`meta` in `src/content/*.ts`), canonical URL, `hreflang` links between
+  English/Hindi/Marathi (+ `x-default`), `Content-Language` headers (`netlify.toml`).
+- Social previews (WhatsApp, Facebook, X): `public/og/{en,hi,mr}.jpg` are screenshots of each language's hero
+  (top of the page at 1440 px wide, cropped to 1200 × 630, JPEG under 300 KB so WhatsApp shows them).
+  Retake them after changing the hero.
+- Structured data (JSON-LD): Organization, WebSite, SoftwareApplication and FAQPage (`src/components/structured-data.tsx`).
+- `sitemap.xml` (with language alternates; bump `SITE.contentUpdated` after content changes) and `robots.txt`.
+
+**One-time, after the site is live:**
+1. **Google Search Console** → Add property → *Domain* `dailydudh.in` → copy the TXT record → Cloudflare DNS → add it
+   (TXT, name `@`) → Verify. Then *Sitemaps* → submit `https://dailydudh.in/sitemap.xml`.
+2. **Bing Webmaster Tools** → *Import from Google Search Console* (one click) — also covers Clarity's Bing link.
+3. Check a share preview: paste `https://dailydudh.in` into WhatsApp, or use the Facebook Sharing Debugger.
+
+## Analytics (Microsoft Clarity)
+
+Set `NEXT_PUBLIC_CLARITY_PROJECT_ID` in Netlify (Site configuration → Environment variables) and redeploy; without it
+nothing loads. Disclosed in the privacy policy. Use a separate Clarity project from the app (`app.dailydudh.in`).
 
 ## Deploy (Netlify)
 

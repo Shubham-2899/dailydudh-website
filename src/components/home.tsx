@@ -19,6 +19,7 @@ import { CONTENT } from "@/content";
 import { Footer } from "./footer";
 import { Header } from "./header";
 import { HeroMock } from "./mocks";
+import { StructuredData } from "./structured-data";
 
 const FEATURE_ICONS = [Route, CloudOff, BellRing, ReceiptText, QrCode, Wallet];
 
@@ -45,6 +46,7 @@ export function Home({ locale }: { locale: Locale }) {
 
   return (
     <div lang={locale}>
+      <StructuredData locale={locale} />
       <Header locale={locale} t={t} />
 
       <main>

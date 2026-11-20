@@ -1,5 +1,5 @@
 export type Content = {
-  meta: { title: string; description: string };
+  meta: { title: string; description: string; ogAlt: string };
   nav: { features: string; how: string; faq: string; contact: string; openApp: string; menu: string; language: string };
   hero: {
     eyebrow: string;

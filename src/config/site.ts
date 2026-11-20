@@ -9,12 +9,17 @@ export const SITE = {
   /** WhatsApp number for "Chat with us" (digits with country code, e.g. "919876543210"). Leave empty to hide. */
   whatsapp: "",
   privacyUpdated: "2026-11-20",
+  /** Last meaningful content change; used in the sitemap. */
+  contentUpdated: "2026-11-20",
 } as const;
 
 export const LOCALES = ["en", "hi", "mr"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const LOCALE_LABEL: Record<Locale, string> = { en: "English", hi: "हिन्दी", mr: "मराठी" };
+
+/** Language-region codes for hreflang / og:locale (all pages target India). */
+export const LOCALE_TAG: Record<Locale, string> = { en: "en-IN", hi: "hi-IN", mr: "mr-IN" };
 
 /** URL of a page in a language. English lives at the root, others under /hi and /mr. */
 export function href(locale: Locale, page: "home" | "privacy" = "home", hash = ""): string {

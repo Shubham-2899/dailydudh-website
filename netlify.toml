@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "22"
+  # The Clarity id ends up in the page by design; keep Netlify's secret scan from failing on it.
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_CLARITY_PROJECT_ID"
 
 # www → apex
 [[redirects]]
@@ -18,3 +20,30 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"
+
+# Language of each page for search engines (hreflang tags in the pages say the same).
+[[headers]]
+  for = "/hi"
+  [headers.values]
+    Content-Language = "hi-IN"
+
+[[headers]]
+  for = "/hi/*"
+  [headers.values]
+    Content-Language = "hi-IN"
+
+[[headers]]
+  for = "/mr"
+  [headers.values]
+    Content-Language = "mr-IN"
+
+[[headers]]
+  for = "/mr/*"
+  [headers.values]
+    Content-Language = "mr-IN"
+
+# Social preview images and icons rarely change; let browsers/crawlers cache them for a day.
+[[headers]]
+  for = "/og/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

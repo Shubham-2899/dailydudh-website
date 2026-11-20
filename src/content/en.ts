@@ -3,9 +3,10 @@ import type { Content } from "./types";
 
 export const en: Content = {
   meta: {
-    title: "DailyDudh: milk delivery and billing app for milk suppliers",
+    title: "DailyDudh: Milk Delivery & Billing App for Milkmen and Dairies",
     description:
-      "Daily delivery list for your helpers, works without internet, and monthly bills your customers pay by UPI. In Hindi, Marathi and English.",
+      "Milk delivery app for milk suppliers: a daily route list for helpers that works offline, monthly milk bills sent on WhatsApp, and UPI payments. In Hindi, Marathi and English.",
+    ogAlt: "DailyDudh app: daily milk delivery list and a monthly bill with UPI QR code",
   },
   nav: { features: "Features", how: "How it works", faq: "Questions", contact: "Contact", openApp: "Open app", menu: "Menu", language: "Language" },
   hero: {
@@ -122,8 +123,12 @@ export const en: Content = {
         body: ["Data is stored on secure cloud servers with encrypted connections and regular backups. Logins use a PIN; access is limited by role."],
       },
       {
-        title: "This website",
-        body: ["This website does not use tracking or advertising cookies. The app uses one cookie to keep you logged in."],
+        title: "Analytics and cookies",
+        body: [
+          "We use Microsoft Clarity on this website and in the app to see how pages are used (taps, scrolling) so we can make them easier. Clarity sets cookies for this.",
+          "In the app, all text on screen is hidden from these recordings, so names, phone numbers and amounts are never recorded. Customers' bill and receipt pages are not recorded at all.",
+          "We do not use advertising cookies. The app also uses one cookie to keep you logged in.",
+        ],
       },
       {
         title: "Your choices",
