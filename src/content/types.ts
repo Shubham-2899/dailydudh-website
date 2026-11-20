@@ -37,6 +37,8 @@ export type Content = {
   footer: { tagline: string; privacy: string; rights: string };
   privacy: {
     title: string;
+    /** Search result snippet, 120–155 characters. */
+    metaDescription: string;
     updated: string;
     intro: string;
     sections: { title: string; body: string[] }[];

@@ -5,7 +5,7 @@ export const en: Content = {
   meta: {
     title: "DailyDudh: Milk Delivery & Billing App for Milkmen and Dairies",
     description:
-      "Milk delivery app for milk suppliers: a daily route list for helpers that works offline, monthly milk bills sent on WhatsApp, and UPI payments. In Hindi, Marathi and English.",
+      "Milk delivery app for milkmen: an offline delivery list for helpers, monthly bills on WhatsApp and UPI payments. In Hindi, Marathi and English.",
     ogAlt: "DailyDudh app: daily milk delivery list and a monthly bill with UPI QR code",
   },
   nav: { features: "Features", how: "How it works", faq: "Questions", contact: "Contact", openApp: "Open app", menu: "Menu", language: "Language" },
@@ -89,6 +89,7 @@ export const en: Content = {
   },
   footer: { tagline: "Milk delivery and billing, made simple.", privacy: "Privacy policy", rights: "All rights reserved." },
   privacy: {
+    metaDescription: "How DailyDudh stores and protects data for milk suppliers, their helpers and customers: what we keep, who can see it, and your choices.",
     title: "Privacy policy",
     updated: "Last updated",
     intro:
